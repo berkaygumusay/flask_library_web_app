@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block bodyBlock %}
+
+    <hr>
+    <h3>Dashboard</h3>
+    <p>Welcome {{session["username"]}}</p>
+    <hr><br>
+    <a href="/addbook" ><button type="button" class="btn btn-secondary">Add Book</button></a>
+    <a href="/mybooks" ><button type="button" class="btn btn-secondary">My Books</button></a>
+    <a href="/books" ><button type="button" class="btn btn-secondary">All Books</button></a>
+    
+
+{% endblock bodyBlock %}   

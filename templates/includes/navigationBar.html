@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Berkay Gümüşay</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        {% if session["logged_in"] %}
+
+        <li class="nav-item active">
+          <a class="nav-link disabled " href="/contactinfo">Contact Information</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link disabled " href="/dashboard">Dashboard</a>
+        </li>
+        {% else %}
+        {% endif %}
+        
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        {% if session["logged_in"] %}
+          <li class="nav-item active"> 
+              <a class="nav-link disabled " href="/logout">Log Out</a>
+            </li>
+          
+        
+        {% else %}
+          <li class="nav-item active">
+              <a class="nav-link disabled " href="/signup">Sign Up</a>
+            </li>
+          <li class="nav-item active">
+              <a class="nav-link disabled " href="/login">Login</a>
+            </li>
+        {% endif %}
+        
+        
+      </ul>
+    </div>
+  </nav>

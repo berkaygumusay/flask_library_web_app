@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block bodyBlock %}
+<hr>
+<h3>Books<h3>
+<hr>
+
+{% if books %}
+<form action="/search" method  = "post">
+  <input type="text" name = "keyword" class=" form-input" placeholder="Book Name...">
+  <button type = "submit" class = "btn btn-secondary">Search</button>
+</form>
+<hr>
+<p></p>
+<font size = "4">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Added By</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <th scope="row">{{book.id}}</th>
+                <td><a href="/book/{{book.id}}">{{book.title}}</a></td>
+                <td>{{book.author}}</td>
+                <td>{{book.genre}}</td>
+                <td>{{book.user}}</td>
+            </tr>
+            
+            {% endfor %}
+        </tbody>
+      </table>
+</font>
+{% else %}
+<div class="alert alert-danger">There Is No Book Entered The System</div>
+{% endif %}
+
+{% endblock %}

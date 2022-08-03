@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block bodyBlock %}
+    {% if book %}
+    <h3>{{book.title}}</h3>
+    <hr>
+    <h5>Author : {{book.author}}</h5>
+    <hr>
+    <h5>Date : {{book.date}}</h5>
+    <hr>
+    <h5>Added By : {{book.user}}</h5>
+    <hr>
+    <h5>Content</h5>
+    <font size="4"><p>{{book.content}}</p></font>
+    {% else %}
+    <div class="alert alert-danger">There is no such book in the system</div>
+    {% endif %}
+{% endblock %}
